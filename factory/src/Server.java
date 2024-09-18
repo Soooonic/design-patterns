@@ -1,24 +1,24 @@
 public class Server extends Computer{
-    private String cpu;
-    private String hdd;
-    private String ram;
+    private String CPU;
+    private String RAM;
+    private String HDD;
 
-    public Server(String cpu, String hdd, String ram) {
-        this.cpu = cpu;
-        this.hdd = hdd;
-        this.ram = ram;
+
+    public Server(String CPU, String HDD, String RAM) {
+        this.CPU = CPU;
+        this.HDD = HDD;
+        this.RAM = RAM;
+    }
+
+    @Override
+    public String getCPU() {return this.CPU;}
+    @Override
+    public String getRAM() {
+        return this.RAM;
     }
 
     @Override
     public String getHDD() {
-        return this.hdd;
-    }
-    @Override
-    public String getCPU() {
-        return this.cpu;
-    }
-    @Override
-    public String getRAM() {
-        return this.ram;
+        return this.HDD;
     }
 }

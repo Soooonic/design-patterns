@@ -1,24 +1,24 @@
 public class PC extends Computer{
-    private String cpu;
-    private String hdd;
-    private String ram;
+    private String CPU;
+    private String RAM;
+    private String HDD;
 
-    public PC(String cpu, String hdd, String ram) {
-        this.cpu = cpu;
-        this.hdd = hdd;
-        this.ram = ram;
+    public PC(String CPU, String HDD, String RAM) {
+        this.CPU = CPU;
+        this.HDD = HDD;
+        this.RAM = RAM;
     }
 
-    @Override
-    public String getHDD() {
-        return this.hdd;
-    }
     @Override
     public String getCPU() {
-        return this.cpu;
+        return this.CPU;
     }
     @Override
     public String getRAM() {
-        return this.ram;
+        return this.RAM;
+    }
+    @Override
+    public String getHDD() {
+        return this.HDD;
     }
 }
