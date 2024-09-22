@@ -1,3 +1,5 @@
+package computer;
+
 public abstract class Computer {
     public abstract String getCPU();
     public abstract String getRAM();
