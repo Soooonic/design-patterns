@@ -1,3 +1,6 @@
+import computer.Computer;
+import factory.ComputerFactory;
+
 public class Main {
     public static void main(String[] args) {
         Computer pc = ComputerFactory.getComputer("pc","2 GB","500 GB","2.4 GHz");
