@@ -5,4 +5,4 @@ we have a superclass with multiple sub-classes and based on input, we need to re
 factory design pattern takes out the responsibility of the instantiation of a class from the client program to the factory class.
 
 ## Structure
-![factory method](https://github.com/user-attachments/assets/fa182827-16b6-4842-b649-55a3ee26983f)
+![factory method-edit](https://github.com/user-attachments/assets/b1dcdf36-08c3-4252-9669-3555e189021c)
