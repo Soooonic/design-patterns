@@ -1,28 +1,15 @@
 package computer;
 
 public class Computer {
-    //required
     private String HDD;
     private String RAM;
+    private String CPU;
+    private String processor;
     //optional
+    private String opticalDrive;//DVD
     private boolean isGraphicsCardEnabled;
     private boolean isBluetoothEnabled;
 
-    public void setHDD(String HDD) {
-        this.HDD = HDD;
-    }
-
-    public void setRAM(String RAM) {
-        this.RAM = RAM;
-    }
-
-    public void setGraphicsCardEnabled(boolean graphicsCardEnabled) {
-        isGraphicsCardEnabled = graphicsCardEnabled;
-    }
-
-    public void setBluetoothEnabled(boolean bluetoothEnabled) {
-        isBluetoothEnabled = bluetoothEnabled;
-    }
 
     public String getHDD() {
         return HDD;
@@ -30,6 +17,18 @@ public class Computer {
 
     public String getRAM() {
         return RAM;
+    }
+
+    public String getCPU() {
+        return CPU;
+    }
+
+    public String getProcessor() {
+        return processor;
+    }
+
+    public String getOpticalDrive() {
+        return opticalDrive;
     }
 
     public boolean isGraphicsCardEnabled() {
@@ -40,5 +39,50 @@ public class Computer {
         return isBluetoothEnabled;
     }
 
+    private Computer(ComputerBuilder computerBuilder) {
+        this.HDD = computerBuilder.HDD;
+        this.RAM = computerBuilder.RAM;
+        this.CPU = computerBuilder.CPU;
+        this.processor = computerBuilder.processor;
+        this.opticalDrive=computerBuilder.opticalDrive;
+        this.isGraphicsCardEnabled=computerBuilder.isGraphicsCardEnabled;
+        this.isBluetoothEnabled=computerBuilder.isBluetoothEnabled;
+    }
 
+
+    public static class ComputerBuilder {
+        private String HDD;
+        private String RAM;
+        private String CPU;
+        private String processor;
+        //optional
+        private String opticalDrive;//DVD
+        private boolean isGraphicsCardEnabled;
+        private boolean isBluetoothEnabled;
+
+
+        public ComputerBuilder(String HDD, String RAM, String CPU, String processor) {
+            this.HDD = HDD;
+            this.RAM = RAM;
+            this.CPU = CPU;
+            this.processor = processor;
+        }
+
+        public ComputerBuilder setOpticalDrive(String opticalDrive){
+            this.opticalDrive=opticalDrive;
+            return this;
+        }
+        public ComputerBuilder setGraphicsCardEnabled(){
+            this.isGraphicsCardEnabled=true;
+            return this;
+        }
+        ComputerBuilder setBluetoothEnabled(){
+            this.isBluetoothEnabled=true;
+            return this;
+        }
+
+        public  Computer getResult(){
+            return new Computer(this);
+        }
+    }
 }
