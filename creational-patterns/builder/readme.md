@@ -3,7 +3,7 @@ we want to create object with large number of optional parameters and the object
 so we now have two problems:
 * create object with large number of optional parameters
      that can be error prone because most of the time, the type of arguments are same and from client side its hard to maintain the order of the argument
-* object will be in inconistent state
+* object will be in inconsistent state
     if the object is immutable and doesn't have setters
     so if there some attributes i will know it in later stage in the code, then i will never set them to the object
     example:
