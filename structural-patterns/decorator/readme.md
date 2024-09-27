@@ -4,7 +4,9 @@ if i want to create a new car object that have the features of two kinds of cars
 but if i have ten kinds of cars and i wand to add features from this classes at runtime that will be complex.
 suppose this scenario:
 class BasicCar
+
 class SportsCar extends BasicCar
+
 class LuxuryCar extends BasicCar
 
 // and i want to make create object that will be a sports car and luxury car
