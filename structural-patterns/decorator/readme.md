@@ -3,6 +3,7 @@ Suppose we want to implement different kinds of cars
 if i want to create a new car object that have the features of two kinds of cars that can be done by inheritance or composition
 but if i have ten kinds of cars and i wand to add features from this classes at runtime that will be complex.
 suppose this scenario:
+
 class BasicCar
 
 class SportsCar extends BasicCar
