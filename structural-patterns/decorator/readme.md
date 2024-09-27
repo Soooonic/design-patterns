@@ -13,10 +13,15 @@ class LuxuryCar extends BasicCar
 // and i want to make create object that will be a sports car and luxury car
 
 //at compile time:
-we can create a new class: SportsLuxuryCar extends SportsCar,LuxuryCar
+
+we can create a new class: 
+SportsLuxuryCar extends SportsCar,LuxuryCar
 and for language that doesn't support multiple inheritance we can that like this:
+
 class SportsCar extends BasicCar
+
 class SportsLuxuryCar extends SportsCar
+
 class Luxury extends BasicCar
 
 however these two ways will be too complex if the number kinds increased as i will have to make all the combinations to satisfy the user input
