@@ -1,35 +1,56 @@
 ## Problem 
-Suppose we want to implement different kinds of cars
-if i want to create a new car object that have the features of two kinds of cars that can be done by inheritance or composition
-but if i have ten kinds of cars and i wand to add features from this classes at runtime that will be complex.
-suppose this scenario:
+we use decorator pattern when we want to make the user to create entity in the system and able to add some features to this entity as long as he goes
 
-class BasicCar
+ex:
 
-class SportsCar extends BasicCar
+we create app that makes the user able to customize the car he wants as he first starts with basic car 
+and have some options such as makes the car sports car or luxury car or both.
 
-class LuxuryCar extends BasicCar
+to do that first thing will come to your head is to use inheritance from BasicCar class and add SportsCar and LuxuryCar, 
 
-// and i want to make create object that will be a sports car and luxury car
+so we will have to add subclasses to all combinations (SportsCar , LuxuryCar , SportsLuxuryCar , ...)
 
-//at compile time:
+and if the number of subclasses increased the number of combinations will increase and will become too hard to implement and will be complex to choose the options i want at runtime.
 
-we can create a new class: 
-SportsLuxuryCar extends SportsCar,LuxuryCar
-and for language that doesn't support multiple inheritance we can that like this:
+now we have two problems:
 
-class SportsCar extends BasicCar
+    1- large number of subclasses(combinations)
+    2- Inheritance is static. You can’t alter the behavior of an existing
+    object at runtime. You can only replace the whole object with
+    another one that’s created from a different subclass.
+see this example if we use Inheritance
+``` java 
+BasicCar car=new BasicCar();
+if(sportsCarEnabled && luxuryCarEnabled)
+    //clonning
+    //copy constructor to clone the data from car object
+    car=new SportsLuxuryCar(car); 
+else if(sportsCarEnabled)
+    car=new SportsCar(car);
+else if(luxuryCarEnabled)
+    car=new LuxuryCar(car); 
+...
+```
 
-class SportsLuxuryCar extends SportsCar
-
-class Luxury extends BasicCar
-
-however these two ways will be too complex if the number kinds increased as i will have to make all the combinations to satisfy the user input
-
-//at runtime:
-will be impossible
 ## Solution
-Decorator design pattern is used to modify the functionality of an object at runtime. At the same time other instances of the same class will not be affected by this, so individual object gets the modified behavior.
+one of the ways to overcome these problems is by using Composition instead of Inheritance.
+see this example if we use Composition
+``` java
+BasicCar car=new BasicCar();
+if(sportsCarEnabled)
+    //constructor to set car object inside SporstsCar class
+    car=new SportsCar(car);
+if(luxuryCarEnabled)
+    car=new LuxuryCar(car);
+```
+The resulting objects will be structured as a stack,
+as the last decorator in the stack would be the object that the client actually works with.
+
+Decorator definition:
+
+Decorator is a structural design pattern that lets you attach
+new behaviors to objects by placing these objects inside
+special wrapper objects that contain the behaviors.
 
 ## Structure
 ![decorator](https://github.com/user-attachments/assets/73be97e4-0aaf-4c8f-98d0-b4aa54faa33e)
