@@ -13,7 +13,7 @@ public class Main {
         List<String>list1=empsNew1.getEmpList();
         list1.remove("abdelrahman");
         System.out.println(emps.getEmpList());
-        System.out.println(list);
-        System.out.println(list1);
+        System.out.println(empsNew.getEmpList());
+        System.out.println(empsNew1.getEmpList());
     }
 }
